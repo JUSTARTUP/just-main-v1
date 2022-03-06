@@ -30,8 +30,8 @@ function Landing() {
 		font-size: 80px;
 		animation-timing-function: ease;
 		animation-name: ${ChgOpacity};
-		animation-delay: 3s;
-		animation-duration: 0.4s;
+		animation-delay: 2.6s;
+		animation-duration: 0.3s;
 		animation-fill-mode: forwards;
 	`;
 
@@ -44,7 +44,7 @@ function Landing() {
 			transform: translateY(70%);
 			animation-timing-function: ease;
 			animation-name: ${TextUp};
-			animation-delay: 0.3s;
+			animation-delay: 0s;
 			animation-duration: 0.6s;
 			animation-fill-mode: forwards;
 		}
@@ -53,28 +53,26 @@ function Landing() {
 			animation-timing-function: ease;
 			animation-name: ${TextUp};
 			animation-duration: 0.6s;
-			animation-delay: 1.1s;
+			animation-delay: 1s;
 			animation-fill-mode: forwards;
 		}
 		&:nth-child(4) {
 			transform: translateY(70%);
 			animation-timing-function: ease;
 			animation-name: ${TextUp};
-			animation-duration: 0.6s;
-			animation-delay: 2.3s;
+			animation-duration: 0.8s;
+			animation-delay: 1.7s;
 			animation-fill-mode: forwards;
 		}
 	`;
 
 	return (
-		<>
-			<TextContainer>
-				<JustText>J</JustText>
-				<JustText>U</JustText>
-				<JustText>S</JustText>
-				<JustText>T</JustText>
-			</TextContainer>
-		</>
+		<TextContainer>
+			<JustText>J</JustText>
+			<JustText>U</JustText>
+			<JustText>S</JustText>
+			<JustText>T</JustText>
+		</TextContainer>
 	);
 }
 

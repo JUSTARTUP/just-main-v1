@@ -12,17 +12,17 @@ import gasp from "gsap";
 const App = () => {
 	const [isReady, setIsReady] = useState(false);
 
-	// useEffect(() => {
-	// 	setIsReady(false);
-	// 	setTimeout(() => {
-	// 		setIsReady(true);
-	// 	}, 4000);
-	// }, []);
+	useEffect(() => {
+		setIsReady(false);
+		setTimeout(() => {
+			setIsReady(true);
+		}, 3000);
+	}, []);
 
 	const AppStyle = styled.div`
-		background-color: ${(props) =>
-			props.theme.bgColor}; // 개발끝나고 bgColor변경
+		background-color: ${(props) => props.theme.bgColor};
 		width: 100vw;
+		min-height: 100vh;
 		height: auto;
 		color: ${(props) => props.theme.textColor};
 		text-overflow: hidden;
@@ -35,27 +35,33 @@ const App = () => {
 		}
 	`;
 
+	// const DummyScrollPg = styled.div`
+	// 	/* background-color: green;
+	// 	height: 100vh;
+	// 	width: 100vw; */
+	// `;
+
 	return (
 		<AppStyle>
 			<Cursor />
-			{/* {!isReady && <Landing />} */}
-			{/* {isReady && ( */}
-			<>
-				<HeaderBack />
-				<NavBar />
-				<Header />
-				<Footer />
-				<MainContainer>
-					<section></section>
-					<section></section>
-					<section></section>
-					<section></section>
-					<section></section>
-					<section></section>
-					<section></section>
-				</MainContainer>
-			</>
-			{/* )} */}
+			{!isReady && <Landing />}
+			{isReady && (
+				<>
+					<HeaderBack />
+					<NavBar />
+					<Header />
+					<Footer />
+					<MainContainer>
+						<section></section>
+						<section></section>
+						<section></section>
+						<section></section>
+						<section></section>
+						<section></section>
+						<section></section>
+					</MainContainer>
+				</>
+			)}
 		</AppStyle>
 	);
 };

@@ -1,13 +1,26 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const NavBar = () => {
+	const NavShowUp = keyframes`
+    0%{
+      transform: translateY(100px);
+      opacity : 0;
+    }
+    100%{
+      opacity : 1;
+    }
+  `;
+
 	const NavContainer = styled.div`
 		display: flex;
 		flex-direction: row;
+		animation-name: ${NavShowUp};
+		animation-duration: 2s;
 	`;
+
 	const SideLogo = styled.div`
-		position: fixed;
+		position: absolute;
 		left: 80px;
 		top: 44px;
 		font-size: 40px;
@@ -17,7 +30,7 @@ const NavBar = () => {
 	`;
 
 	const MenuContainer = styled.div`
-		position: fixed;
+		position: absolute;
 		right: 80px;
 		top: 44px;
 		display: flex;

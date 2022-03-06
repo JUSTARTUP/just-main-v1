@@ -1,19 +1,25 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
 
 const Header = () => {
+	const NavShowUp = keyframes`
+    0%{
+      transform: translateY(100px);
+      opacity : 0;
+    }
+    100%{
+      opacity : 1;
+    }
+  `;
+
 	const HeaderContainer = styled.div`
-		-webkit-touch-callout: none;
-		-webkit-user-select: none;
-		-khtml-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		text-align: center;
+		animation-name: ${NavShowUp};
+		animation-duration: 2s;
 	`;
 
 	const HeaderTitle = styled.h1`
