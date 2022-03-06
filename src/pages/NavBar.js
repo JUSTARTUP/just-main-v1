@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function NavBar() {
+const NavBar = () => {
 	const NavContainer = styled.div`
 		display: flex;
 		flex-direction: row;
@@ -39,6 +39,6 @@ function NavBar() {
 			</MenuContainer>
 		</NavContainer>
 	);
-}
+};
 
 export default NavBar;
