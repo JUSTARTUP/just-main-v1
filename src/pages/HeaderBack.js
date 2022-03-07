@@ -18,15 +18,16 @@ const HeaderBack = () => {
 	const BackMotionText = styled.div`
 		position: absolute;
 		top: 280px;
+		left: -120px;
 		font-size: 440px;
 		white-space: nowrap;
 		font-family: "casc-mono";
-		font-style: bold;
+		font-weight: 600;
 		opacity: 0.1;
-		transform: rotate(-15deg) translateX(${-position * 1.5}px)
-			translateY(${-0.4 * position * 1.5}px);
+		transform: rotate(-15deg) translateX(${position * 1.7}px)
+			translateY(${-0.23 * position * 1.3}px);
 	`;
-	return <BackMotionText>START-UP</BackMotionText>;
+	return <BackMotionText data-scroll>START-UP</BackMotionText>;
 };
 
 export default HeaderBack;

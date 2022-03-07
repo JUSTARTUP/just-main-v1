@@ -35,17 +35,15 @@ const Header = () => {
 		color: ${(props) => props.theme.textColor};
 		font-family: "Noto Sans KR";
 		font-size: 20px;
-		font-style: bold;
+		font-weight: 600;
 		margin: auto 0;
 	`;
 
 	return (
-		<>
-			<HeaderContainer>
-				<HeaderTitle>JUST</HeaderTitle>
-				<HeaderSub>무모한 도전의 여정</HeaderSub>
-			</HeaderContainer>
-		</>
+		<HeaderContainer>
+			<HeaderTitle>JUST</HeaderTitle>
+			<HeaderSub>무모한 도전의 여정</HeaderSub>
+		</HeaderContainer>
 	);
 };
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import locomotiveScroll from "locomotive-scroll";
 import Cursor from "./components/cursor/Cursor";
@@ -7,16 +7,23 @@ import NavBar from "./pages/NavBar";
 import Footer from "./pages/Footer";
 import Header from "./pages/Header";
 import HeaderBack from "./pages/HeaderBack";
-import gasp from "gsap";
+import Slogan from "./components/main/Slogan";
+import Mumo from "./components/main/Mumo";
+import MovingLabel from "components/main/MovingLabel";
+import JustCards from "pages/JustCards";
+import QnA from "pages/QnA";
+import Members from "pages/Members";
+import Sponser from "pages/Sponser";
 
 const App = () => {
 	const [isReady, setIsReady] = useState(false);
+	const ref = useRef(null);
 
 	useEffect(() => {
 		setIsReady(false);
 		setTimeout(() => {
 			setIsReady(true);
-		}, 3000);
+		}, 0); // 원래 3000
 	}, []);
 
 	const AppStyle = styled.div`
@@ -28,19 +35,6 @@ const App = () => {
 		text-overflow: hidden;
 	`;
 
-	const MainContainer = styled.div`
-		padding: 0 4vw;
-		section {
-			padding: 140px 80px;
-		}
-	`;
-
-	// const DummyScrollPg = styled.div`
-	// 	/* background-color: green;
-	// 	height: 100vh;
-	// 	width: 100vw; */
-	// `;
-
 	return (
 		<AppStyle>
 			<Cursor />
@@ -50,16 +44,14 @@ const App = () => {
 					<HeaderBack />
 					<NavBar />
 					<Header />
+					<Slogan />
+					<Mumo />
+					<MovingLabel />
+					<JustCards />
+					<Members />
+					<QnA />
+					<Sponser />
 					<Footer />
-					<MainContainer>
-						<section></section>
-						<section></section>
-						<section></section>
-						<section></section>
-						<section></section>
-						<section></section>
-						<section></section>
-					</MainContainer>
 				</>
 			)}
 		</AppStyle>

@@ -17,6 +17,7 @@ const NavBar = () => {
 		flex-direction: row;
 		animation-name: ${NavShowUp};
 		animation-duration: 2s;
+		animation-timing-function: ease;
 	`;
 
 	const SideLogo = styled.div`

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @font-face {
 	font-family: "casc-mono";
 	src: url("../fonts/CascadiaMonoItalic.ttf");
@@ -14,6 +14,7 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	background-color: "#080808";
 }
 
 body {
@@ -23,29 +24,22 @@ body {
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow-x: hidden;
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 }
-
-*::-webkit-scrollbar {
-	width: 6px;
-}
-*::-webkit-scrollbar-track {
-	background-color: black;
-}
-*::-webkit-scrollbar-thumb {
-	border-radius: 4px;
-	background-color: gray;
-}
-*::-webkit-scrollbar-button {
-	width: 0;
-	height: 0;
-}
 * {
-	scrollbar-width: thin;
-	scrollbar-color: gray transparent;
+	-ms-overflow-style: none; /* IE, Edge */
+	scrollbar-width: none; /* Firefox */
+}
+*::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
+}
+
+section {
+	padding: 120px 0px;
+	margin: 0 80px;
+	/* border: 1px solid red; */
 }
