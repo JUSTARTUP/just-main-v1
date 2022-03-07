@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dd3ec42c.css",
+    "main.js": "/static/js/main.4e06a6b7.js",
+    "static/js/787.efc4a14d.chunk.js": "/static/js/787.efc4a14d.chunk.js",
+    "static/media/minyong.jpg": "/static/media/minyong.28620f79af6966ce8085.jpg",
+    "static/media/minsung.png": "/static/media/minsung.419a059dc7731582f287.png",
+    "static/media/inhwa.png": "/static/media/inhwa.db9ed154986fec10bf6e.png",
+    "static/media/jahoon.jpg": "/static/media/jahoon.c99c8bb661a527b4e583.jpg",
+    "static/media/CascadiaMonoItalic.ttf": "/static/media/CascadiaMonoItalic.64accd8054b552533f1d.ttf",
+    "static/media/eunchai.jpg": "/static/media/eunchai.116220931873e81c2fa3.jpg",
+    "static/media/card2.png": "/static/media/card2.bef876a0f0c87f1957fe.png",
+    "static/media/card3.png": "/static/media/card3.269fe7efd5a4384de189.png",
+    "static/media/card1.png": "/static/media/card1.b5ccd36c6408183f5ead.png",
+    "static/media/dogo.jpg": "/static/media/dogo.d98cfb870c9b07138877.jpg",
+    "static/media/heewon.jpg": "/static/media/heewon.ef35f1c2569bbee145ab.jpg",
+    "static/media/test.png": "/static/media/test.fdfcd425672f0605e30e.png",
+    "index.html": "/index.html",
+    "main.dd3ec42c.css.map": "/static/css/main.dd3ec42c.css.map",
+    "main.4e06a6b7.js.map": "/static/js/main.4e06a6b7.js.map",
+    "787.efc4a14d.chunk.js.map": "/static/js/787.efc4a14d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd3ec42c.css",
+    "static/js/main.4e06a6b7.js"
+  ]
+}
