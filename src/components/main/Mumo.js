@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "assets/Image/test.png";
+import Image from "assets/Image/justFinger.png";
 
 const Mumo = () => {
 	const SquareImg = styled.img`
 		height: 560px;
 		width: 520px;
+		object-fit: scale-down;
 	`;
 
 	const MumoContainer = styled.section`

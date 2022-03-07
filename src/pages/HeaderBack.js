@@ -24,8 +24,9 @@ const HeaderBack = () => {
 		font-family: "casc-mono";
 		font-weight: 600;
 		opacity: 0.1;
-		transform: rotate(-15deg) translateX(${position * 1.7}px)
-			translateY(${-0.23 * position * 1.3}px);
+		will-change: transform;
+		transform: rotate(-15deg) translateX(${position / 2}px)
+			translateY(${(-0.23 * position) / 2}px);
 	`;
 	return <BackMotionText data-scroll>START-UP</BackMotionText>;
 };
