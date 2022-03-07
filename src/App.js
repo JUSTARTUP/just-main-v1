@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled, { keyframes } from "styled-components";
-import locomotiveScroll from "locomotive-scroll";
+import styled from "styled-components";
 import Cursor from "./components/cursor/Cursor";
 import Landing from "./pages/Landing";
 import NavBar from "./pages/NavBar";
@@ -14,10 +13,10 @@ import JustCards from "pages/JustCards";
 import QnA from "pages/QnA";
 import Members from "pages/Members";
 import Sponser from "pages/Sponser";
+import Youtube from "pages/Youtube";
 
 const App = () => {
 	const [isReady, setIsReady] = useState(false);
-	const ref = useRef(null);
 
 	useEffect(() => {
 		setIsReady(false);
@@ -49,6 +48,8 @@ const App = () => {
 					<MovingLabel />
 					<JustCards />
 					<Members />
+					<Youtube />
+					<MovingLabel />
 					<QnA />
 					<Sponser />
 					<Footer />

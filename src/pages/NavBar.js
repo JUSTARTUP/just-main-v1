@@ -4,11 +4,12 @@ import styled, { keyframes } from "styled-components";
 const NavBar = () => {
 	const NavShowUp = keyframes`
     0%{
-      transform: translateY(100px);
+      transform: translate(-6px,100px);
       opacity : 0;
     }
     100%{
       opacity : 1;
+      transform: translate(-6px,0px);
     }
   `;
 
@@ -16,8 +17,9 @@ const NavBar = () => {
 		display: flex;
 		flex-direction: row;
 		animation-name: ${NavShowUp};
-		animation-duration: 2s;
+		animation-duration: 1.4s;
 		animation-timing-function: ease;
+		animation-fill-mode: forwards;
 	`;
 
 	const SideLogo = styled.div`
@@ -49,7 +51,7 @@ const NavBar = () => {
 			<MenuContainer>
 				<Menu>HOME</Menu>
 				<Menu>ABOUT</Menu>
-				<Menu>QnA</Menu>
+				<Menu>Team</Menu>
 			</MenuContainer>
 		</NavContainer>
 	);
