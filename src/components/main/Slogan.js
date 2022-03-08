@@ -1,33 +1,54 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+const SloganSentence = styled.div`
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+	font-size: 48px;
+`;
+
+const Point = styled.span`
+	color: ${(props) => props.theme.pointColor};
+`;
+
+const BBolong = styled.span`
+	transition: 0.4s;
+	&:hover {
+		transform: scale(1.4);
+	}
+`;
 
 const Slogan = () => {
-	const SloganSentence = styled.div`
-		display: flex;
-		align-items: center;
-		font-weight: 600;
-		font-size: 48px;
-	`;
+	gsap.registerPlugin(ScrollTrigger);
+	const sloganRef = useRef(null);
+	useEffect(() => {
+		const element = sloganRef.current;
+		gsap.from(element, {
+			y: -600,
+			opacity: -0.2,
 
-	const Point = styled.span`
-		color: ${(props) => props.theme.pointColor};
-	`;
-
-	const BBolong = styled.span`
-		transition: 0.4s;
-		&:hover {
-			transform: scale(1.4);
-		}
-	`;
+			scrollTrigger: {
+				trigger: element,
+				scrub: true,
+				start: "top bottom",
+				end: "bottom top",
+				// markers: true,
+			},
+		});
+	}, []);
 
 	return (
 		<section
 			style={{
-				height: "300px",
+				height: "700px",
 				margin: "100vh 0 20vh 0",
 				display: "flex",
 				justifyContent: "center",
 			}}
+			ref={sloganRef}
 		>
 			<SloganSentence>
 				<BBolong>"</BBolong>

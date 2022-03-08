@@ -1,47 +1,45 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+const QuestionContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+`;
 
+const TitleText = styled.strong`
+	color: ${(props) => props.theme.textColor};
+	font-size: 40px;
+	margin: 120px 0;
+`;
+
+const Question = styled.div`
+	padding-left: 24px;
+	width: 1000px;
+	height: 64px;
+	border-radius: 20px;
+	background-color: ${(props) => props.theme.pointColor};
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 24px;
+	color: ${(props) => props.theme.textColor};
+	margin-bottom: 8px;
+`;
+const Answer = styled.div`
+	padding-left: 24px;
+	width: 1000px;
+	height: 80px;
+	border-radius: 20px;
+	background-color: #353535;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 20px;
+	color: ${(props) => props.theme.pointColor};
+	margin-bottom: 32px;
+`;
 const QnA = () => {
-	const QuestionContainer = styled.div`
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-	`;
-
-	const TitleText = styled.strong`
-		color: ${(props) => props.theme.textColor};
-		font-size: 40px;
-		margin: 120px 0;
-	`;
-
-	const Question = styled.div`
-		padding-left: 24px;
-		width: 1000px;
-		height: 64px;
-		border-radius: 20px;
-		background-color: ${(props) => props.theme.pointColor};
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		font-size: 24px;
-		color: ${(props) => props.theme.textColor};
-		margin-bottom: 8px;
-	`;
-	const Answer = styled.div`
-		padding-left: 24px;
-		width: 1000px;
-		height: 80px;
-		border-radius: 20px;
-		background-color: #353535;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		font-size: 20px;
-		color: ${(props) => props.theme.pointColor};
-		margin-bottom: 32px;
-	`;
-
 	return (
 		<section>
 			<QuestionContainer>

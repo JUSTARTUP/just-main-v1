@@ -22,7 +22,7 @@ const App = () => {
 		setIsReady(false);
 		setTimeout(() => {
 			setIsReady(true);
-		}, 3000); // 원래 3000
+		}, 0); // 원래 3000
 	}, []);
 
 	const AppStyle = styled.div`
