@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+
 const TextUp = keyframes`
 from {
 	transform: translateY(70%);
@@ -25,12 +26,19 @@ const TextContainer = styled.div`
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-family: "casc-mono";
-	font-size: 80px;
 	animation-timing-function: ease;
+	font-size: 80px;
 	animation-name: ${ChgOpacity};
 	animation-delay: 2.6s;
 	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
+
+	@media only screen and (max-width: 480px) {
+		font-size: 36px;
+	}
+	@media only screen and(min-width: 480px) and (max-width: 768px) {
+		font-size: 60px;
+	}
 `;
 
 const JustText = styled.div`

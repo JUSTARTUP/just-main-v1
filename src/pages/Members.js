@@ -71,7 +71,7 @@ const memberList = [
 		link: "https://www.instagram.com/ja_hoon_05/",
 	},
 	{
-		name: "당장 JUST에 합류하기!",
+		name: ["JUST에", <div />, "합류하기!"],
 		profile: JUST,
 		job: "JUST 2기",
 		comment: "함께 창업의 여정에 도전할 분을 찾고 있어요!",
@@ -104,6 +104,19 @@ const ComeIn2 = keyframes`
 			transform : translate(0px,-150px);
 		}
 	`;
+const ComeInX = keyframes`
+		0% {
+			transform: translate(400px,300px);
+			opacity : 0;
+
+		}
+		70% {
+			opacity : 1;
+		}
+		100% {
+			transform : translate(0px,300px);
+		}
+	`;
 
 const Profile = styled.div`
 	display: flex;
@@ -115,24 +128,47 @@ const Profile = styled.div`
 		transform: translateY(150px);
 		animation-name: ${ComeIn};
 		animation-duration: 1s;
+		@media only screen and (max-width: 480px) {
+			animation: none;
+		}
 	}
 	&:nth-child(2) {
 		transform: translateY(-150px);
 		animation-name: ${ComeIn2};
 		animation-duration: 1s;
+		@media only screen and (max-width: 480px) {
+			animation: none;
+			transform: translateY(100px);
+		}
+		@media only screen and (min-width: 480px) and (max-width: 1500px) {
+			animation-name: ${ComeInX};
+			transform: translateY(300px);
+		}
 	}
 `;
 const ProfileJob = styled.div`
 	color: ${(props) => props.theme.pointColor};
 	font-size: 20px;
+	@media only screen and (max-width: 480px) {
+		display: none;
+	}
 `;
 const ProfileComment = styled.div`
 	font-size: 16px;
 	font-weight: 300;
 	margin-top: 20px;
+	@media only screen and (max-width: 480px) {
+		display: none;
+	}
 `;
 const ProfileName = styled.div`
 	font-size: 32px;
+	@media only screen and (max-width: 480px) {
+		font-size: 20px;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		font-size: 20px;
+	}
 `;
 const ProfileTexts = styled.div`
 	margin: 36px;
@@ -142,8 +178,24 @@ const ProfileContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	height: 100vh;
-	padding-left: 200px;
+	padding-left: 14vw;
 	width: 100vw;
+	margin: 40vw 0vw;
+	@media only screen and (max-width: 480px) {
+		padding-left: 0vw;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		padding-left: 0vw;
+	}
+	@media only screen and (min-width: 76px) and (max-width: 1500px) {
+		padding-left: 12vw;
+	}
+	@media only screen and (min-width: 1500px) and (max-width: 1800px) {
+		padding-left: 6vw;
+	}
+	@media only screen and (min-width: 2000px) {
+		padding-left: 24vw;
+	}
 `;
 
 const ProfileCircle = styled.img`
@@ -155,31 +207,55 @@ const ProfileCircle = styled.img`
 	&:hover {
 		transform: scale(1.1);
 	}
+	@media only screen and (max-width: 480px) {
+		height: 200px;
+		width: 200px;
+	}
 `;
 
 const ProfileTitle = styled.div`
 	color: ${(props) => props.theme.textColor};
-	font-size: 52px;
+	font-size: 2.6vw;
 	font-weight: 600;
-	transform: translateX(-100px);
+	@media only screen and (max-width: 480px) {
+		transform: translate(-50px, 140px);
+		font-size: 20px;
+		text-align: center;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		font-size: 2.3vw;
+		text-align: center;
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1500px) {
+		padding-left: 16vw;
+	}
 `;
 const Point = styled.span`
 	color: ${(props) => props.theme.pointColor};
 `;
 
 const OutlinedBtn = styled.div`
-	transform: translate(-200px, 280px);
+	transform: translate(-300px, 280px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 160px;
-	width: 160px;
+	height: 10vw;
+	min-height: 24px;
+	width: 10vw;
+	min-width: 24px;
 	border-radius: 50%;
 	border: 2px solid white;
+	@media only screen and (max-width: 480px) {
+		transform: translate(70vw, 86px);
+	}
+	@media only screen and(min-width: 768px) and (max-width: 1500px) {
+		transform: translate(52vw, 340px);
+	}
 `;
 
 const ArrowIcon = styled.img`
-	width: 48px;
+	min-width: 12px;
+	width: 3vw;
 	object-fit: scale-down;
 	transition: 0.4s;
 	&:hover {
@@ -191,8 +267,13 @@ const Members = () => {
 
 	const ProfileWrapper = styled.div`
 		display: grid;
+		position: relative;
 		/* grid-template-columns: repeat(${memberList.length}, 1fr); */
 		grid-template-columns: repeat(${memberList.length}, 1fr);
+		@media only screen and (max-width: 1500px) {
+			grid-template-columns: none;
+			grid-template-rows: repeat(3, 1fr);
+		}
 	`;
 	const handleClick = () => {
 		memberIndex < 6 ? setMemberIndex(memberIndex + 2) : setMemberIndex(0);
@@ -201,47 +282,45 @@ const Members = () => {
 	let i = memberIndex;
 
 	return (
-		<section data-scroll-section>
-			<ProfileContainer data-scroll-section>
-				<ProfileTitle>
-					<Point>2022 JUST </Point>1기 크루
-				</ProfileTitle>
-				<ProfileWrapper>
-					<Profile>
-						<a
-							href={memberList[i].link}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<ProfileCircle src={memberList[i].profile} alt="" />
-						</a>
-						<ProfileTexts>
-							<ProfileName>{memberList[i].name}</ProfileName>
-							<ProfileJob>{memberList[i].job}</ProfileJob>
-							<ProfileComment>"{memberList[i].comment}"</ProfileComment>
-						</ProfileTexts>
-					</Profile>
-					<Profile>
-						{" "}
-						<a
-							href={memberList[i + 1].link}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<ProfileCircle src={memberList[i + 1].profile} />
-						</a>
-						<ProfileTexts>
-							<ProfileName>{memberList[i + 1].name}</ProfileName>
-							<ProfileJob>{memberList[i + 1].job}</ProfileJob>
-							<ProfileComment>"{memberList[i + 1].comment}"</ProfileComment>
-						</ProfileTexts>
-					</Profile>
-					<OutlinedBtn onClick={handleClick}>
-						<ArrowIcon src={arrow} />
-					</OutlinedBtn>
-				</ProfileWrapper>
-			</ProfileContainer>
-		</section>
+		<ProfileContainer>
+			<ProfileTitle>
+				<Point>2022 JUST </Point>1기 크루
+			</ProfileTitle>
+			<ProfileWrapper>
+				<Profile>
+					<a
+						href={memberList[i].link}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<ProfileCircle src={memberList[i].profile} alt="" />
+					</a>
+					<ProfileTexts>
+						<ProfileName>{memberList[i].name}</ProfileName>
+						<ProfileJob>{memberList[i].job}</ProfileJob>
+						<ProfileComment>"{memberList[i].comment}"</ProfileComment>
+					</ProfileTexts>
+				</Profile>
+				<Profile>
+					{" "}
+					<a
+						href={memberList[i + 1].link}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<ProfileCircle src={memberList[i + 1].profile} />
+					</a>
+					<ProfileTexts>
+						<ProfileName>{memberList[i + 1].name}</ProfileName>
+						<ProfileJob>{memberList[i + 1].job}</ProfileJob>
+						<ProfileComment>"{memberList[i + 1].comment}"</ProfileComment>
+					</ProfileTexts>
+				</Profile>
+				<OutlinedBtn onClick={handleClick}>
+					<ArrowIcon src={arrow} />
+				</OutlinedBtn>
+			</ProfileWrapper>
+		</ProfileContainer>
 	);
 };
 

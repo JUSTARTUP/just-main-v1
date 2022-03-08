@@ -16,12 +16,25 @@ const Footer = () => {
 		font-family: "casc-mono";
 		font-style: bold;
 		color: ${(props) => props.theme.pointColor};
+		@media only screen and (max-width: 480px) {
+			flex-direction: column;
+			align-items: end;
+			font-size: 32px;
+			transform: translateY(40px);
+		}
+		@media only screen and (min-width: 480px) and (max-width: 768px) {
+			font-size: 36px;
+		}
 	`;
 	const BtnContainer = styled.div`
 		display: flex;
 		flex-direction: row;
 		width: 240px;
 		justify-content: space-between;
+		@media only screen and (max-width: 768px) {
+			width: 140px;
+			transform: translateY(36px);
+		}
 	`;
 	const Circle = styled.div`
 		display: flex;
@@ -31,12 +44,21 @@ const Footer = () => {
 		width: 60px;
 		border-radius: 50%;
 		background-color: ${(props) => props.theme.pointColor};
+		@media only screen and (max-width: 768px) {
+			height: 40px;
+			width: 40px;
+		}
 	`;
 
 	const ICON = styled.img`
 		height: 34px;
 		width: 34px;
 		object-fit: scale-down;
+
+		@media only screen and (max-width: 768px) {
+			height: 22px;
+			width: 22px;
+		}
 	`;
 	return (
 		<section data-scroll-section style={{ paddingBottom: "60px" }}>

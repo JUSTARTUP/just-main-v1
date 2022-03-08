@@ -7,7 +7,13 @@ const SloganSentence = styled.div`
 	display: flex;
 	align-items: center;
 	font-weight: 600;
-	font-size: 48px;
+	font-size: 40px;
+	@media only screen and (max-width: 480px) {
+		font-size: 20px;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		font-size: 28px;
+	}
 `;
 
 const Point = styled.span`
@@ -22,24 +28,6 @@ const BBolong = styled.span`
 `;
 
 const Slogan = () => {
-	gsap.registerPlugin(ScrollTrigger);
-	const sloganRef = useRef(null);
-	useEffect(() => {
-		const element = sloganRef.current;
-		gsap.from(element, {
-			y: -600,
-			opacity: -0.2,
-
-			scrollTrigger: {
-				trigger: element,
-				scrub: true,
-				start: "top bottom",
-				end: "bottom top",
-				// markers: true,
-			},
-		});
-	}, []);
-
 	return (
 		<section
 			style={{
@@ -48,7 +36,6 @@ const Slogan = () => {
 				display: "flex",
 				justifyContent: "center",
 			}}
-			ref={sloganRef}
 		>
 			<SloganSentence>
 				<BBolong>"</BBolong>

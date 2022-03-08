@@ -24,8 +24,14 @@ const HeaderTitle = styled.h1`
 	color: ${(props) => props.theme.pointColor};
 	position: relative;
 	font-family: "casc-mono";
-	font-size: 100px;
+	font-size: 92px;
 	margin: auto 0;
+	@media only screen and (max-width: 480px) {
+		font-size: 52px;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		font-size: 78px;
+	}
 `;
 
 const HeaderSub = styled.p`
@@ -35,6 +41,9 @@ const HeaderSub = styled.p`
 	font-size: 20px;
 	font-weight: 600;
 	margin: auto 0;
+	@media only screen and (max-width: 480px) {
+		font-size: 16px;
+	}
 `;
 const Header = () => {
 	return (

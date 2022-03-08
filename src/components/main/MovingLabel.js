@@ -20,6 +20,9 @@ const Label = styled.div`
 	white-space: nowrap;
 	letter-spacing: -2px;
 	transform: translateX(-500);
+	@media only screen and (max-width: 768px) {
+		font-size: 40px;
+	}
 `;
 
 const MovingLabel = () => {
@@ -35,7 +38,6 @@ const MovingLabel = () => {
 				scrub: true,
 				start: "top bottom",
 				end: "bottom top",
-				// markers: true,
 			},
 		});
 	}, []);

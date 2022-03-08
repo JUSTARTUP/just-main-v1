@@ -12,6 +12,17 @@ const CustomCursor = styled.div`
 	background-color: ${(props) => props.theme.cursorColor};
 	transform: translate3d(0, 0, 0);
 	position: fixed;
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+`;
+const BlackBox = styled.div`
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	top: 0px;
+	left: 0px;
+	color: "#080808";
 `;
 const Cursor = () => {
 	const cursorRef = useRef(null);
@@ -25,7 +36,12 @@ const Cursor = () => {
 		});
 	}, []);
 
-	return <CustomCursor ref={cursorRef}></CustomCursor>;
+	return (
+		<>
+			<BlackBox></BlackBox>
+			<CustomCursor ref={cursorRef}></CustomCursor>
+		</>
+	);
 };
 
 export default Cursor;

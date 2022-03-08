@@ -28,19 +28,45 @@ const SideLogo = styled.div`
 	font-family: "casc-mono";
 	font-style: bold;
 	color: ${(props) => props.theme.pointColor};
+	@media only screen and (max-width: 480px) {
+		left: 30px;
+		top: 24px;
+		flex-direction: column;
+		align-items: end;
+		font-size: 32px;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		top: 36px;
+		left: 40px;
+		font-size: 36px;
+	}
 `;
 
 const MenuContainer = styled.div`
 	position: absolute;
-	right: 80px;
+	right: 86px;
 	top: 44px;
 	display: flex;
 	flex-direction: row;
 	width: 240px;
 	justify-content: space-between;
+	@media only screen and (max-width: 480px) {
+		right: 20px;
+		top: 24px;
+		flex-direction: column;
+		align-items: end;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		top: 32px;
+		right: 20px;
+	}
 `;
 const Menu = styled.div`
 	font-size: 16px;
+
+	@media only screen and (max-width: 480px) {
+		font-size: 12px;
+	}
 `;
 
 const NavBar = () => {
