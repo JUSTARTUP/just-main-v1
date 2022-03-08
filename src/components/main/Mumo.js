@@ -1,45 +1,67 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-import Image from "assets/Image/justFinger.png";
+import Image from "assets/Image/msPark.jpg";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+const SquareImg = styled.img`
+	height: 560px;
+	width: 600px;
+	object-fit: scale-down;
+`;
+
+const MumoContainer = styled.section`
+	margin: 0px 300px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`;
+
+const TextContainer = styled.div`
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+`;
+
+const Point = styled.strong`
+	color: ${(props) => props.theme.pointColor};
+`;
+
+const MumoDiscription = styled.p`
+	font-size: 24px;
+	font-weight: 200;
+`;
+
+const MumoTitle = styled.div`
+	font-size: 40px;
+	font-weight: 600;
+`;
 
 const Mumo = () => {
-	const SquareImg = styled.img`
-		height: 560px;
-		width: 520px;
-		object-fit: scale-down;
-	`;
+	gsap.registerPlugin(ScrollTrigger);
+	const imgRef = useRef(null);
 
-	const MumoContainer = styled.section`
-		margin: 0px 300px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	`;
+	useEffect(() => {
+		const element = imgRef.current;
+		gsap.from(element, {
+			y: -600,
+			opacity: -0.2,
 
-	const TextContainer = styled.div`
-		height: 400px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	`;
-
-	const Point = styled.strong`
-		color: ${(props) => props.theme.pointColor};
-	`;
-
-	const MumoDiscription = styled.p`
-		font-size: 24px;
-		font-weight: 200;
-	`;
-
-	const MumoTitle = styled.div`
-		font-size: 40px;
-		font-weight: 600;
-	`;
-
+			scrollTrigger: {
+				trigger: element,
+				scrub: true,
+				start: "top bottom",
+				end: "bottom top",
+				// markers: true,
+			},
+		});
+	}, []);
 	return (
 		<MumoContainer data-scroll-section>
-			<SquareImg src={Image} alt="just picture"></SquareImg>
+			<div ref={imgRef}>
+				<SquareImg src={Image} alt="just picture"></SquareImg>
+			</div>
 			<TextContainer>
 				<MumoTitle>
 					"<Point>무모한 도전</Point>을 이어나가자"

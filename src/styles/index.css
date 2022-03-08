@@ -4,6 +4,7 @@
 	font-family: "casc-mono";
 	src: url("../fonts/CascadiaMonoItalic.ttf");
 	font-style: bold;
+	color: "#fff";
 }
 
 * {
@@ -14,6 +15,7 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+
 	background-color: "#080808";
 }
 
@@ -43,7 +45,6 @@ code {
 	background-color: gray;
 }
 *::-webkit-scrollbar-button {
-	width: 2;
 	height: 0;
 }
 * {

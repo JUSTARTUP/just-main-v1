@@ -78,11 +78,7 @@ const memberList = [
 		link: "https://www.instagram.com/start_just_up/",
 	},
 ];
-
-const Members = () => {
-	const [memberIndex, setMemberIndex] = useState(0);
-
-	const ComeIn = keyframes`
+const ComeIn = keyframes`
 		0% {
 			transform: translate(400px,150px);
 			opacity : 0;
@@ -95,7 +91,7 @@ const Members = () => {
 
 		}
 	`;
-	const ComeIn2 = keyframes`
+const ComeIn2 = keyframes`
 		0% {
 			transform: translate(400px,-150px);
 			opacity : 0;
@@ -109,94 +105,95 @@ const Members = () => {
 		}
 	`;
 
-	const Profile = styled.div`
-		display: flex;
-		align-items: center;
-		/* background-color: red; */
-		height: 300px;
-		width: 700px;
-		&:nth-child(1) {
-			transform: translateY(150px);
-			animation-name: ${ComeIn};
-			animation-duration: 1s;
-		}
-		&:nth-child(2) {
-			transform: translateY(-150px);
-			animation-name: ${ComeIn2};
-			animation-duration: 1s;
-		}
-	`;
-	const ProfileJob = styled.div`
-		color: ${(props) => props.theme.pointColor};
-		font-size: 20px;
-	`;
-	const ProfileComment = styled.div`
-		font-size: 16px;
-		font-weight: 300;
-		margin-top: 20px;
-	`;
-	const ProfileName = styled.div`
-		font-size: 32px;
-	`;
-	const ProfileTexts = styled.div`
-		margin: 36px;
-	`;
-	const ProfileContainer = styled.div`
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		height: 100vh;
-		padding-left: 200px;
-		width: 100vw;
-	`;
+const Profile = styled.div`
+	display: flex;
+	align-items: center;
+	/* background-color: red; */
+	height: 300px;
+	width: 700px;
+	&:nth-child(1) {
+		transform: translateY(150px);
+		animation-name: ${ComeIn};
+		animation-duration: 1s;
+	}
+	&:nth-child(2) {
+		transform: translateY(-150px);
+		animation-name: ${ComeIn2};
+		animation-duration: 1s;
+	}
+`;
+const ProfileJob = styled.div`
+	color: ${(props) => props.theme.pointColor};
+	font-size: 20px;
+`;
+const ProfileComment = styled.div`
+	font-size: 16px;
+	font-weight: 300;
+	margin-top: 20px;
+`;
+const ProfileName = styled.div`
+	font-size: 32px;
+`;
+const ProfileTexts = styled.div`
+	margin: 36px;
+`;
+const ProfileContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+	padding-left: 200px;
+	width: 100vw;
+`;
 
-	const ProfileCircle = styled.img`
-		height: 300px;
-		width: 300px;
-		border-radius: 50%;
-		object-fit: cover;
-		transition: 0.4s;
-		&:hover {
-			transform: scale(1.1);
-		}
-	`;
+const ProfileCircle = styled.img`
+	height: 300px;
+	width: 300px;
+	border-radius: 50%;
+	object-fit: cover;
+	transition: 0.4s;
+	&:hover {
+		transform: scale(1.1);
+	}
+`;
+
+const ProfileTitle = styled.div`
+	color: ${(props) => props.theme.textColor};
+	font-size: 52px;
+	font-weight: 600;
+	transform: translateX(-100px);
+`;
+const Point = styled.span`
+	color: ${(props) => props.theme.pointColor};
+`;
+
+const OutlinedBtn = styled.div`
+	transform: translate(-200px, 280px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 160px;
+	width: 160px;
+	border-radius: 50%;
+	border: 2px solid white;
+`;
+
+const ArrowIcon = styled.img`
+	width: 48px;
+	object-fit: scale-down;
+	transition: 0.4s;
+	&:hover {
+		transform: scale(1.3);
+	}
+`;
+const Members = () => {
+	const [memberIndex, setMemberIndex] = useState(0);
 
 	const ProfileWrapper = styled.div`
 		display: grid;
 		/* grid-template-columns: repeat(${memberList.length}, 1fr); */
 		grid-template-columns: repeat(${memberList.length}, 1fr);
 	`;
-
-	const ProfileTitle = styled.div`
-		color: ${(props) => props.theme.textColor};
-		font-size: 52px;
-		font-weight: 600;
-		transform: translateX(-100px);
-	`;
-	const Point = styled.span`
-		color: ${(props) => props.theme.pointColor};
-	`;
-
-	const OutlinedBtn = styled.div`
-		transform: translate(-200px, 280px);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 160px;
-		width: 160px;
-		border-radius: 50%;
-		border: 2px solid white;
-	`;
-
-	const ArrowIcon = styled.img`
-		width: 48px;
-		object-fit: scale-down;
-		transition: 0.4s;
-		&:hover {
-			transform: scale(1.3);
-		}
-	`;
-
 	const handleClick = () => {
 		memberIndex < 6 ? setMemberIndex(memberIndex + 2) : setMemberIndex(0);
 		return;
@@ -211,7 +208,13 @@ const Members = () => {
 				</ProfileTitle>
 				<ProfileWrapper>
 					<Profile>
-						<ProfileCircle src={memberList[i].profile} alt="" />
+						<a
+							href={memberList[i].link}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<ProfileCircle src={memberList[i].profile} alt="" />
+						</a>
 						<ProfileTexts>
 							<ProfileName>{memberList[i].name}</ProfileName>
 							<ProfileJob>{memberList[i].job}</ProfileJob>
@@ -219,7 +222,14 @@ const Members = () => {
 						</ProfileTexts>
 					</Profile>
 					<Profile>
-						<ProfileCircle src={memberList[i + 1].profile} alt="" />
+						{" "}
+						<a
+							href={memberList[i + 1].link}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<ProfileCircle src={memberList[i + 1].profile} />
+						</a>
 						<ProfileTexts>
 							<ProfileName>{memberList[i + 1].name}</ProfileName>
 							<ProfileJob>{memberList[i + 1].job}</ProfileJob>

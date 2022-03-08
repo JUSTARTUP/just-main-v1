@@ -1,34 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import esayspub from "../assets/Image/easyspub.png";
+const Title = styled.div`
+	font-size: 60px;
+	font-weight: 600;
+	color: ${(props) => props.theme.pointColor};
+	margin-bottom: 40px;
+`;
+
+const About = styled.div`
+	font-size: 20px;
+	margin-bottom: 60px;
+`;
+
+const SponserContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	height: 40vh;
+	text-align: center;
+	justify-content: center;
+`;
+
+const Sponser1 = styled.img`
+	filter: opacity(0.5) drop-shadow(0 0 0 white);
+	height: 32px;
+	object-fit: scale-down;
+`;
 
 const Sponser = () => {
-	const Title = styled.div`
-		font-size: 60px;
-		font-weight: 600;
-		color: ${(props) => props.theme.pointColor};
-		margin-bottom: 40px;
-	`;
-
-	const About = styled.div`
-		font-size: 20px;
-		margin-bottom: 60px;
-	`;
-
-	const SponserContainer = styled.div`
-		display: flex;
-		flex-direction: column;
-		height: 40vh;
-		text-align: center;
-		justify-content: center;
-	`;
-
-	const Sponser1 = styled.img`
-		filter: opacity(0.5) drop-shadow(0 0 0 white);
-		height: 32px;
-		object-fit: scale-down;
-	`;
-
 	return (
 		<section data-scroll-section>
 			<SponserContainer>
