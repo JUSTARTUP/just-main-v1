@@ -61,9 +61,10 @@ const MenuContainer = styled.div`
 		right: 20px;
 	}
 `;
-const Menu = styled.div`
+const Menu = styled.a`
 	font-size: 16px;
-
+	color: ${(props) => props.theme.textColor};
+	text-decoration: none;
 	@media only screen and (max-width: 480px) {
 		font-size: 12px;
 	}
@@ -75,8 +76,20 @@ const NavBar = () => {
 			<SideLogo>JUST</SideLogo>
 			<MenuContainer>
 				<Menu>HOME</Menu>
-				<Menu>ABOUT</Menu>
-				<Menu>Team</Menu>
+
+				<Menu
+					href="https://minsung521.github.io/JUST_web_iosNmac/"
+					target="_blank"
+				>
+					IOS
+				</Menu>
+
+				<Menu
+					href="https://minsung521.github.io/JUST-PROJECTS-2022/"
+					target="_blank"
+				>
+					PROJECTS
+				</Menu>
 			</MenuContainer>
 		</NavContainer>
 	);
