@@ -15,7 +15,6 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-
 	background-color: "#080808";
 }
 
@@ -55,5 +54,22 @@ code {
 section {
 	padding: 120px 0px;
 	margin: 0 80px;
+
 	/* border: 1px solid red; */
+}
+@media screen and (max-width: 480px) {
+	section {
+		padding: 120px 0px;
+		margin: 0 20px;
+
+		/* border: 1px solid red; */
+	}
+}
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+	section {
+		padding: 120px 0px;
+		margin: 0 40px;
+
+		/* border: 1px solid red; */
+	}
 }

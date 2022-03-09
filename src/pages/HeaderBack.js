@@ -17,9 +17,9 @@ const HeaderBack = () => {
 
 	const BackMotionText = styled.div`
 		position: absolute;
-		top: 280px;
-		left: -120px;
-		font-size: 440px;
+		top: 28%;
+		left: -6vw;
+		font-size: 24vw;
 		white-space: nowrap;
 		font-family: "casc-mono";
 		font-weight: 600;
@@ -27,7 +27,13 @@ const HeaderBack = () => {
 		will-change: transform;
 		transform: rotate(-15deg) translateX(${position / 2}px)
 			translateY(${(-0.23 * position) / 2}px);
+		@media not all and (min-resolution: 0.001dpcm) {
+			@supports (-webkit-appearance: none) {
+				display: none;
+			}
+		}
 	`;
+
 	return <BackMotionText data-scroll>START-UP</BackMotionText>;
 };
 

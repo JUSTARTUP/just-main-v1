@@ -12,62 +12,114 @@ const CardSetContainer = styled.div`
 `;
 const CardSet = styled.div`
 	display: flex;
-	width: 1000px;
-	height: 360px;
-	border-radius: 40px;
+	width: 50vw;
+	height: 18vw;
+	border-radius: 1.7vw;
 	background-color: ${(props) => props.theme.textColor};
 	overflow: hidden;
-	margin: 30px 0;
+	margin: 30px 0px;
 	box-sizing: border-box;
+	@media only screen and (max-width: 480px) {
+		height: 28.8vw;
+		width: 80vw;
+		margin: 8px 0px;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		height: 28.8vw;
+		width: 80vw;
+		margin: 8px 0px;
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1200px) {
+		height: 21.6vw;
+		width: 60vw;
+		margin: 8px 0px;
+	}
 `;
 
 const Card = styled.img`
 	background-color: aliceblue;
-	width: 500px;
-	height: 360px;
+	width: 25vw;
+	height: 18vw;
 	z-index: 2;
 	box-sizing: border-box;
-`;
-
-const CardCover = styled.div`
-	background-color: ${(props) => props.theme.pointColor};
-	width: 500px;
-	height: 360px;
-	z-index: 1;
-	transform: translateX(-500px);
+	@media only screen and (max-width: 480px) {
+		height: 28.8vw;
+		width: 80vw;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		height: 28.8vw;
+		width: 40vw;
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1200px) {
+		height: 21.6vw;
+		width: 30vw;
+	}
 `;
 
 const KeyWord = styled.strong`
 	display: block;
 	color: ${(props) => props.theme.pointColor};
-	font-size: 12px;
+	font-size: 0.7vw;
+	@media only screen and (max-width: 480px) {
+		font-size: 6px;
+	}
 `;
 const Title = styled.strong`
 	display: block;
 	color: ${(props) => props.theme.bgColor};
-	font-size: 28px;
+	font-size: 1.5vw;
 	letter-spacing: -2px;
 	margin-bottom: 8px;
+	@media only screen and (max-width: 480px) {
+		font-size: 12px;
+	}
 `;
 const Discription = styled.div`
 	color: ${(props) => props.theme.bgColor};
-	font-size: 16px;
+	font-size: 0.9vw;
 	letter-spacing: -1px;
+	@media only screen and (max-width: 480px) {
+		display: none;
+	}
 `;
 const TextWrapper = styled.div`
-	padding: 76px 0 0 56px;
+	padding: 3.6vw 0 0 2.6vw;
 	background-color: white;
-	width: 500px;
-	height: 360px;
+	width: 25vw;
+	height: 18vw;
+	@media only screen and (max-width: 480px) {
+		height: 28.8vw;
+		width: 80vw;
+		padding: 8vw 0 0 2.6vw;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		height: 28.8vw;
+		width: 40vw;
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1200px) {
+		height: 21.6vw;
+		width: 30vw;
+	}
 `;
+
 const Point = styled.span`
 	color: ${(props) => props.theme.pointColor};
 `;
 
 const TitleText = styled.strong`
 	color: ${(props) => props.theme.textColor};
-	font-size: 40px;
-	margin: 160px 0;
+	font-size: 2vw;
+	margin: 160px 0px;
+	@media only screen and (max-width: 480px) {
+		font-size: 18px;
+		margin: 12px 0px;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		margin: 0px;
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1200px) {
+		margin: 60px 0px;
+	}
 `;
 const Content = [
 	{
@@ -113,38 +165,36 @@ const Content = [
 
 const JustCards = () => {
 	return (
-		<section data-scroll-section>
-			<CardSetContainer>
-				<TitleText>
-					<Point>저스트</Point>에서 어떤 경험을 할 수 있을까요?
-				</TitleText>
-				<CardSet>
-					<Card src={Img1}></Card>
-					<TextWrapper>
-						<KeyWord>{Content[0].keyword}</KeyWord>
-						<Title>{Content[0].title}</Title>
-						<Discription>{Content[0].discription}</Discription>
-					</TextWrapper>
-				</CardSet>
-				<CardSet>
-					<TextWrapper>
-						<KeyWord>{Content[1].keyword}</KeyWord>
-						<Title>{Content[1].title}</Title>
-						<Discription>{Content[1].discription}</Discription>
-					</TextWrapper>
-					<Card src={Img2}></Card>
-				</CardSet>
-				<CardSet>
-					<Card src={Img3}></Card>
-					<TextWrapper>
-						<KeyWord>{Content[2].keyword}</KeyWord>
-						<Title>{Content[2].title}</Title>
-						<Discription>{Content[2].discription}</Discription>
-					</TextWrapper>
-				</CardSet>
-				{/* <CardCover></CardCover> */}
-			</CardSetContainer>
-		</section>
+		<CardSetContainer>
+			<TitleText>
+				<Point>저스트</Point>에서 어떤 경험을 할 수 있을까요?
+			</TitleText>
+			<CardSet>
+				<Card src={Img1}></Card>
+				<TextWrapper>
+					<KeyWord>{Content[0].keyword}</KeyWord>
+					<Title>{Content[0].title}</Title>
+					<Discription>{Content[0].discription}</Discription>
+				</TextWrapper>
+			</CardSet>
+			<CardSet>
+				<TextWrapper>
+					<KeyWord>{Content[1].keyword}</KeyWord>
+					<Title>{Content[1].title}</Title>
+					<Discription>{Content[1].discription}</Discription>
+				</TextWrapper>
+				<Card src={Img2}></Card>
+			</CardSet>
+			<CardSet>
+				<Card src={Img3}></Card>
+				<TextWrapper>
+					<KeyWord>{Content[2].keyword}</KeyWord>
+					<Title>{Content[2].title}</Title>
+					<Discription>{Content[2].discription}</Discription>
+				</TextWrapper>
+			</CardSet>
+			{/* <CardCover></CardCover> */}
+		</CardSetContainer>
 	);
 };
 

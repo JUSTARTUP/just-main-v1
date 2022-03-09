@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import esayspub from "../assets/Image/easyspub.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 const Title = styled.div`
-	font-size: 60px;
+	font-size: 3vw;
 	font-weight: 600;
 	color: ${(props) => props.theme.pointColor};
 	margin-bottom: 40px;
+	@media only screen and (max-width: 480px) {
+		font-size: 8vw;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		font-size: 6 vw;
+	}
 `;
 
 const About = styled.div`
-	font-size: 20px;
+	font-size: 1vw;
 	margin-bottom: 60px;
+	@media only screen and (max-width: 480px) {
+		font-size: 4vw;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		font-size: 3vw;
+	}
 `;
 
 const SponserContainer = styled.div`
@@ -19,6 +33,9 @@ const SponserContainer = styled.div`
 	height: 40vh;
 	text-align: center;
 	justify-content: center;
+	@media only screen and (max-width: 480px) {
+		height: 16vh;
+	}
 `;
 
 const Sponser1 = styled.img`
@@ -28,8 +45,20 @@ const Sponser1 = styled.img`
 `;
 
 const Sponser = () => {
+	gsap.registerPlugin(ScrollTrigger);
+	const sponserRef = useRef(null);
+	useEffect(() => {
+		const element = sponserRef.current;
+		gsap.from(element, {
+			opacity: 0,
+			duration: 2,
+			scrollTrigger: {
+				trigger: element,
+			},
+		});
+	}, []);
 	return (
-		<section data-scroll-section>
+		<section ref={sponserRef}>
 			<SponserContainer>
 				<Title>후원사</Title>
 				<About>
