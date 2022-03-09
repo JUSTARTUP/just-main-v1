@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const HeaderBack = () => {
 	const [position, setPosition] = useState(0);
@@ -27,14 +27,12 @@ const HeaderBack = () => {
 		will-change: transform;
 		transform: rotate(-15deg) translateX(${position / 2}px)
 			translateY(${(-0.23 * position) / 2}px);
-		@media not all and (min-resolution: 0.001dpcm) {
-			@supports (-webkit-appearance: none) {
-				display: none;
-			}
+		@media only screen and (max-width: 900px) {
+			transform: rotate(-15deg);
 		}
 	`;
 
-	return <BackMotionText data-scroll>START-UP</BackMotionText>;
+	return <BackMotionText>START-UP</BackMotionText>;
 };
 
 export default HeaderBack;
