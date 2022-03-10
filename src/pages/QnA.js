@@ -47,6 +47,12 @@ const Question = styled.div`
 		border-radius: 16px;
 		font-size: 20px;
 	}
+	@media only screen and (min-width: 768px) and (max-width: 1500px) {
+		width: 60vw;
+		height: 52px;
+		border-radius: 16px;
+		font-size: 16px;
+	}
 `;
 const Answer = styled.div`
 	padding: 0px 24px;
@@ -67,6 +73,12 @@ const Answer = styled.div`
 		font-size: 16px;
 	}
 	@media only screen and (min-width: 480px) and (max-width: 768px) {
+		width: 60vw;
+		height: 170px;
+		border-radius: 16px;
+		font-size: 16px;
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1500px) {
 		width: 60vw;
 		height: 100px;
 		border-radius: 16px;

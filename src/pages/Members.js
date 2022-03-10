@@ -106,7 +106,7 @@ const ComeIn2 = keyframes`
 	`;
 const ComeInX = keyframes`
 		0% {
-			transform: translate(400px,300px);
+			transform: translate(400px,0px);
 			opacity : 0;
 
 		}
@@ -114,7 +114,20 @@ const ComeInX = keyframes`
 			opacity : 1;
 		}
 		100% {
-			transform : translate(0px,300px);
+			transform : translate(0px,0px);
+		}
+	`;
+const ComeInX2 = keyframes`
+		0% {
+			transform: translate(400px,0px);
+			opacity : 0;
+
+		}
+		70% {
+			opacity : 1;
+		}
+		100% {
+			transform : translate(0px,0px);
 		}
 	`;
 
@@ -128,21 +141,36 @@ const Profile = styled.div`
 		transform: translateY(150px);
 		animation-name: ${ComeIn};
 		animation-duration: 1s;
-		@media only screen and (max-width: 480px) {
-			animation: none;
+		@media only screen and (max-width: 768px) {
+			transform: translateY(0px);
+			margin-top: 60px;
+			animation: ${ComeInX};
+			width: 90vw;
+			height: 160px;
+		}
+		@media only screen and (min-width: 768px) and (max-width: 1500px) {
+			transform: translateY(0px);
+			margin-top: 60px;
+			animation: ${ComeInX};
+			width: 90vw;
 		}
 	}
 	&:nth-child(2) {
 		transform: translateY(-150px);
 		animation-name: ${ComeIn2};
 		animation-duration: 1s;
-		@media only screen and (max-width: 480px) {
-			animation: none;
-			transform: translateY(100px);
+		@media only screen and (max-width: 768px) {
+			transform: translateY(0px);
+			margin-top: 60px;
+			animation-name: ${ComeInX2};
+			width: 90vw;
+			height: 160px;
 		}
-		@media only screen and (min-width: 480px) and (max-width: 1500px) {
-			animation-name: ${ComeInX};
-			transform: translateY(300px);
+		@media only screen and (min-width: 768px) and (max-width: 1500px) {
+			margin-top: 60px;
+			transform: translateY(0px);
+			animation-name: ${ComeInX2};
+			width: 90vw;
 		}
 	}
 `;
@@ -178,23 +206,20 @@ const ProfileContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	height: 100vh;
-	padding-left: 14vw;
 	width: 100vw;
 	margin: 40vw 0vw;
-	@media only screen and (max-width: 480px) {
-		padding-left: 0vw;
+	padding: 10vw;
+	@media only screen and (max-width: 1500px) {
+		padding: 0vw 2vw;
 	}
-	@media only screen and (min-width: 480px) and (max-width: 768px) {
-		padding-left: 0vw;
+	@media only screen and (min-width: 1500px) and (max-width: 1700px) {
+		padding: 0vw 6vw;
 	}
-	@media only screen and (min-width: 76px) and (max-width: 1500px) {
-		padding-left: 12vw;
+	@media only screen and (min-width: 1700px) and (max-width: 3000px) {
+		padding: 0vw 12vw;
 	}
-	@media only screen and (min-width: 1500px) and (max-width: 1800px) {
-		padding-left: 6vw;
-	}
-	@media only screen and (min-width: 2000px) {
-		padding-left: 24vw;
+	@media only screen and (min-width: 3000px) {
+		padding: 0vw 20vw;
 	}
 `;
 
@@ -207,7 +232,12 @@ const ProfileCircle = styled.img`
 	&:hover {
 		transform: scale(1.1);
 	}
+
 	@media only screen and (max-width: 480px) {
+		height: 160px;
+		width: 160px;
+	}
+	@media only screen and (min-width: 480px) and (max-width: 768px) {
 		height: 200px;
 		width: 200px;
 	}
@@ -218,16 +248,18 @@ const ProfileTitle = styled.div`
 	font-size: 2.6vw;
 	font-weight: 600;
 	@media only screen and (max-width: 480px) {
-		transform: translate(-50px, 140px);
+		/* transform: translate(-50px, 100px); */
 		font-size: 20px;
 		text-align: center;
+		/* display: none; */
 	}
 	@media only screen and (min-width: 480px) and (max-width: 768px) {
 		font-size: 2.3vw;
 		text-align: center;
+		/* display: none; */
 	}
 	@media only screen and (min-width: 768px) and (max-width: 1500px) {
-		padding-left: 16vw;
+		text-align: center;
 	}
 `;
 const Point = styled.span`
@@ -235,7 +267,6 @@ const Point = styled.span`
 `;
 
 const OutlinedBtn = styled.div`
-	transform: translate(-300px, 280px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -245,12 +276,6 @@ const OutlinedBtn = styled.div`
 	min-width: 24px;
 	border-radius: 50%;
 	border: 2px solid white;
-	@media only screen and (max-width: 480px) {
-		transform: translate(70vw, 86px);
-	}
-	@media only screen and(min-width: 768px) and (max-width: 1500px) {
-		transform: translate(52vw, 340px);
-	}
 `;
 
 const ArrowIcon = styled.img`
@@ -262,17 +287,30 @@ const ArrowIcon = styled.img`
 		transform: scale(1.3);
 	}
 `;
+
+const BtnContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	width: 1400px;
+	@media only screen and (max-width: 768px) {
+		width: 90vw;
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1500px) {
+		width: 90vw;
+	}
+`;
+
 const Members = () => {
 	const [memberIndex, setMemberIndex] = useState(0);
 
 	const ProfileWrapper = styled.div`
-		display: grid;
+		display: flex;
+		flex-direction: row;
 		position: relative;
-		/* grid-template-columns: repeat(${memberList.length}, 1fr); */
-		grid-template-columns: repeat(${memberList.length}, 1fr);
 		@media only screen and (max-width: 1500px) {
-			grid-template-columns: none;
-			grid-template-rows: repeat(3, 1fr);
+			flex-direction: column;
+			/* align-items: center; */
 		}
 	`;
 	const handleClick = () => {
@@ -316,10 +354,12 @@ const Members = () => {
 						<ProfileComment>"{memberList[i + 1].comment}"</ProfileComment>
 					</ProfileTexts>
 				</Profile>
+			</ProfileWrapper>
+			<BtnContainer>
 				<OutlinedBtn onClick={handleClick}>
 					<ArrowIcon src={arrow} />
 				</OutlinedBtn>
-			</ProfileWrapper>
+			</BtnContainer>
 		</ProfileContainer>
 	);
 };

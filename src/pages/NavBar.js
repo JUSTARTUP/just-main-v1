@@ -78,14 +78,14 @@ const NavBar = () => {
 				<Menu>HOME</Menu>
 
 				<Menu
-					href="https://minsung521.github.io/JUST_web_iosNmac/"
+					href="https://justartup.github.io/JUST-2022-IOS//"
 					target="_blank"
 				>
 					IOS
 				</Menu>
 
 				<Menu
-					href="https://minsung521.github.io/JUST-PROJECTS-2022/"
+					href="https://justartup.github.io/JUST-PROJECTS-2022/"
 					target="_blank"
 				>
 					PROJECTS
