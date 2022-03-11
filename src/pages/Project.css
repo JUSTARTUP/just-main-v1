@@ -1,0 +1,43 @@
+.initialPage {
+	width: 94vw;
+	height: 50vh;
+	margin: auto 3vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	transition: 2s;
+}
+
+.initialTitle {
+	color: #feaa00;
+	font-size: 6rem;
+	font-weight: 200;
+}
+
+.initialDiscription {
+	font-size: 18px;
+}
+
+.btnContainer {
+	margin: auto 0px;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	padding: 0px;
+	border: #fff 2px solid;
+	display: flex;
+	align-items: center;
+	transition: 0.4s;
+	justify-content: center;
+}
+.circularBtnIcon {
+	height: 48px;
+	width: 48px;
+	transition: 0.4s;
+}
+.btnContainer:hover {
+	transform: scale(0.9);
+}
+.circularBtnIcon:hover {
+	transform: scale(1.2);
+}

@@ -77,10 +77,7 @@ const NavBar = () => {
 			<MenuContainer>
 				<Menu>HOME</Menu>
 
-				<Menu
-					href="https://justartup.github.io/JUST-2022-IOS//"
-					target="_blank"
-				>
+				<Menu href="https://justartup.github.io/JUST-2022-IOS/" target="_blank">
 					IOS
 				</Menu>
 
