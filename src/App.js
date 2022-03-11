@@ -57,6 +57,8 @@ const App = () => {
 		color: ${(props) => props.theme.textColor};
 		text-overflow: hidden;
 		cursor: none;
+		display: flex;
+		flex-direction: column;
 	`;
 
 	return (
