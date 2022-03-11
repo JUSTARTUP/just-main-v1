@@ -14,15 +14,39 @@ import QnA from "pages/QnA";
 import Members from "pages/Members";
 import Sponser from "pages/Sponser";
 import Youtube from "pages/Youtube";
+import Project from "pages/Project";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
+const MySwal = withReactContent(Swal);
 const App = () => {
-	const [isReady, setIsReady] = useState(false);
+	const [isReady, setIsReady] = useState(1);
 
 	useEffect(() => {
-		setIsReady(false);
-		setTimeout(() => {
-			setIsReady(true);
-		}, 3000); // 원래 3000
+		MySwal.fire({
+			title: "IOS기기를 사용중인가요?",
+			text: "아이폰/아이패드를 사용중이라면 전용페이지로 이동하세요",
+			icon: "info",
+			showCancelButton: true,
+			confirmButtonColor: "#080808",
+			cancelButtonColor: "#feaa00",
+			confirmButtonText: "머무르기",
+			cancelButtonText: "IOS 페이지 이동",
+			background: "#080808",
+			color: "#fff",
+			iconColor: "#feaa00",
+		})
+			.then((result) => {
+				!result && window.open("https://justartup.github.io/JUST-2022-IOS/");
+			})
+			.then(() => {
+				setIsReady(0);
+			})
+			.then(() => {
+				setTimeout(() => {
+					setIsReady(2);
+				}, 3000);
+			});
 	}, []);
 
 	const AppStyle = styled.div`
@@ -32,13 +56,14 @@ const App = () => {
 		height: auto;
 		color: ${(props) => props.theme.textColor};
 		text-overflow: hidden;
+		cursor: none;
 	`;
 
 	return (
 		<AppStyle>
 			<Cursor />
 			{!isReady && <Landing />}
-			{isReady && (
+			{isReady == 2 && (
 				<>
 					<HeaderBack />
 					<NavBar />
@@ -48,6 +73,7 @@ const App = () => {
 					<MovingLabel />
 					<JustCards />
 					<Members />
+					<Project />
 					<Youtube />
 					<MovingLabel />
 					<QnA />
