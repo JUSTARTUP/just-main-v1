@@ -28,16 +28,16 @@ const App = () => {
 			text: "아이폰/아이패드를 사용중이라면 전용페이지로 이동하세요",
 			icon: "info",
 			showCancelButton: true,
-			confirmButtonColor: "#080808",
-			cancelButtonColor: "#feaa00",
-			confirmButtonText: "머무르기",
-			cancelButtonText: "IOS 페이지 이동",
+			confirmButtonColor: "#feaa00",
+			cancelButtonColor: "#080808",
+			confirmButtonText: "IOS 페이지 이동",
+			cancelButtonText: "머무르기",
 			background: "#080808",
 			color: "#fff",
 			iconColor: "#feaa00",
 		})
 			.then((result) => {
-				!result && window.open("https://justartup.github.io/JUST-2022-IOS/");
+				if (result) window.open("https://justartup.github.io/JUST-2022-IOS/");
 			})
 			.then(() => {
 				setIsReady(0);
