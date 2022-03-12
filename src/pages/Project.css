@@ -41,3 +41,35 @@
 .circularBtnIcon:hover {
 	transform: scale(1.2);
 }
+@media only screen and (max-width: 440px) {
+	.initialTitle {
+		font-size: 2.4rem;
+	}
+	.initialDiscription {
+		font-size: 12px;
+	}
+	.btnContainer {
+		width: 60px;
+		height: 60px;
+	}
+	.circularBtnIcon {
+		height: 28px;
+		width: 28px;
+	}
+}
+@media only screen and (min-width: 440px) and (max-width: 900px) {
+	.initialTitle {
+		font-size: 4rem;
+	}
+	.initialDiscription {
+		font-size: 12px;
+	}
+	.btnContainer {
+		width: 80px;
+		height: 80px;
+	}
+	.circularBtnIcon {
+		height: 28px;
+		width: 28px;
+	}
+}
