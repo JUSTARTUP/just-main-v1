@@ -41,7 +41,7 @@ const MumoContainer = styled.section`
 `;
 
 const TextContainer = styled.div`
-	height: 400px;
+	height: 300px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
