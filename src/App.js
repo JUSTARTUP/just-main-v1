@@ -37,7 +37,7 @@ const App = () => {
 			iconColor: "#feaa00",
 		})
 			.then((result) => {
-				if (result.isDenied) {
+				if (result.isDismissed) {
 					window.open("https://justartup.github.io/JUST-2022-IOS/");
 				}
 			})
